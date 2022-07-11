@@ -8,20 +8,20 @@ def running(tweet):
         
         dicionario = pickle.load(handle)
     
-        new_tweet = all_in_one(tweet) # tratando o novo tweet
+        new_tweet = all_in_one(tweet) 
     
-        dicionario2 = dicionario.copy() # copiando o bag of words
+        dicionario2 = dicionario.copy()
 
-        words_in_common = list(set(list(dicionario2.keys())).intersection(set(new_tweet))) # intersection
+        words_in_common = list(set(list(dicionario2.keys())).intersection(set(new_tweet)))
     try:
-        for word in words_in_common: # iterando todas as palavras em comum
-            if word in dicionario2.keys(): # avaliando se a palavra em comum esta no bow
-                dicionario2[word] = True # se estiver muda o bow para true nesta palavra
+        for word in words_in_common: 
+            if word in dicionario2.keys(): 
+                dicionario2[word] = True 
                 
-        return dicionario2 # retorna o bow modificado
+        return dicionario2 
     
     except:
-        return dicionario2 # retorna o bow original    
+        return dicionario2     
 
 
 def final(newtweet):
